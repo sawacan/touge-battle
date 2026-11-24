@@ -1,0 +1,1 @@
+{"name":"touge-battle","version":"0.2.1","private":true,"dependencies":{"three":"0.160.1"},"scripts":{"build":"mkdir -p public && cp index.html public/ && cp node_modules/three/build/three.module.js public/"}}
