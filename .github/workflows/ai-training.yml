@@ -20,12 +20,12 @@ jobs:
           node-version: '22'
       - run: npm install --prefix training --no-save --no-package-lock three@0.160.0
       - name: Smoke test
-        run: node training/train.mjs 2
+        run: node training/train-v2.mjs 2
       - name: Train
-        run: node training/train.mjs 1000
+        run: node training/train-v2.mjs 10000
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: rin-training-results
+          name: rin-training-v2-results
           path: training/results/
           retention-days: 14
