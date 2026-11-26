@@ -20,12 +20,12 @@ jobs:
           node-version: '22'
       - run: npm install --prefix training --no-save --no-package-lock three@0.160.0
       - name: Smoke test
-        run: node --check training/train-neural.mjs
+        run: node --check training/train-evolve.mjs
       - name: Train
-        run: node training/train-neural.mjs 40
+        run: node training/train-evolve.mjs 40 2000
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: rin-neural-pilot-results
+          name: rin-neural-evolution-results
           path: training/results/
           retention-days: 14
